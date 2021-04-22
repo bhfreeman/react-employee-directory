@@ -1,7 +1,8 @@
 import React from "react";
 import EmployeeCard from "./EmployeeCard";
 
-function Directory({employees}) {
+function Directory({employees, filterEmployees}) {
+
   return (
     <table>
       <thead>
@@ -16,11 +17,11 @@ function Directory({employees}) {
       <tbody>
       {employees.map((item) => {
        return <EmployeeCard
-          img={item.picture.thumbnail}
-          name={item.name.first + ' ' + item.name.last}
-          phone={item.cell}
+          img={item.image}
+          name={item.name}
+          phone={item.phone}
           email={item.email}
-          dob={item.dob.date}
+          dob={item.dob}
         />;
       })}
       </tbody>

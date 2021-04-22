@@ -3,7 +3,7 @@ import React from "react";
 function EmployeeCard({ img, name, phone, email, dob }) {
   return (
       <tr>
-        <td>{img}</td>
+        <td><img src={img} alt={name}/></td>
         <td>{name}</td>
         <td>{phone}</td>
         <td>{email}</td>
