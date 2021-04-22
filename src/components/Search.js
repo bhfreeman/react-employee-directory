@@ -10,6 +10,7 @@ function Search({searchValue, handleSearchChange}) {
                 onChange={handleSearchChange}
                 type="text"
                 placeholder="Search Employees"
+                className="form-control"
                 ></input>
             </form>
             

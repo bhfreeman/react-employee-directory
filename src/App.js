@@ -2,6 +2,7 @@ import React from "react";
 import API from "./utils/API";
 import Directory from "./components/Directory";
 import Search from "./components/Search";
+import Header from './components/Header'
 
 class App extends React.Component {
   state = {
@@ -63,6 +64,7 @@ class App extends React.Component {
     // console.log(employees.filter(this.filterEmployees))
     return (
       <>
+      <Header/>
         <Search
           searchValue={this.state.search}
           handleSearchChange={this.handleSearchChange}

@@ -1,10 +1,10 @@
 import React from "react";
 import EmployeeCard from "./EmployeeCard";
 
-function Directory({employees, filterEmployees}) {
+function Directory({employees}) {
 
   return (
-    <table>
+    <table className="table table-striped table-dark">
       <thead>
       <tr>
           <th>Image</th>
