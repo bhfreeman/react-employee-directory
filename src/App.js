@@ -33,6 +33,42 @@ class App extends React.Component {
     // }
   };
 
+  filterByNameAsc = (arr) => {
+    return arr.sort((a,b) => {
+      let fa = a.name.toLowerCase(),
+          fb = b.name.toLowerCase();
+  
+      if (fa < fb) {
+          return -1;
+      }
+      if (fa > fb) {
+          return 1;
+      }
+      return 0;
+  });
+  }
+  filterByNameDesc = (arr) => {
+    return arr.sort((a,b) => {
+      let fa = a.name.toLowerCase(),
+          fb = b.name.toLowerCase();
+  
+      if (fb < fa) {
+          return -1;
+      }
+      if (fb > fa) {
+          return 1;
+      }
+      return 0;
+  });
+  }
+
+  handleSortBtn = (event) => {
+    event.preventDefault();
+    if(event.target.getAttribute("name")=== "ascend") this.setState( {employees: this.filterByNameAsc(this.state.employees)});
+    if(event.target.getAttribute("name")=== "desc")this.setState( {employees: this.filterByNameDesc(this.state.employees)});
+    
+  }
+
   handleSearchChange = (event) => {
     //name is the name on the search input
     const { name, value } = event.target;
@@ -55,7 +91,9 @@ class App extends React.Component {
         phone: item.cell,
         email: item.email,
         dob: this.formatDate(item.dob.date),
-        image: item.picture.thumbnail
+        image: item.picture.thumbnail,
+        id: item.login.uuid,
+        gender: item.gender
       }
     })
     this.setState({ employees: employees });
@@ -73,7 +111,7 @@ class App extends React.Component {
           searchValue={this.state.search}
           handleSearchChange={this.handleSearchChange}
         />
-        <Directory employees={employees}/>
+        <Directory employees={employees} handleSortBtn={this.handleSortBtn}/>
       </>
     );
   }

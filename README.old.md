@@ -7,5 +7,5 @@ A react front end that takes in data from the randomuser.me API and turns it int
 ## Github Link
 [Github](https://github.com/bhfreeman/react-employee-directory)
 
-## Deployed with
-[]()
+## Deployed with Netlify
+[Netlify](https://epic-lamport-dceeea.netlify.app)
