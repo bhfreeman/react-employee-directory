@@ -39,6 +39,10 @@ class App extends React.Component {
     this.setState({ [name]: value });
   };
 
+  formatDate = (day) => {
+    return new Date(day).toDateString();
+  } 
+
   componentDidMount() {
     this.getEmployees();
   }
@@ -50,7 +54,7 @@ class App extends React.Component {
         name: `${item.name.first} ${item.name.last}`,
         phone: item.cell,
         email: item.email,
-        dob: item.dob.date,
+        dob: this.formatDate(item.dob.date),
         image: item.picture.thumbnail
       }
     })
