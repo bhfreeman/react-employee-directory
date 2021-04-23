@@ -22,6 +22,7 @@ function Directory({employees}) {
           phone={item.phone}
           email={item.email}
           dob={item.dob}
+          key={item.name}
         />;
       })}
       </tbody>
